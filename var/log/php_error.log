@@ -38,3 +38,13 @@
 [Fri Jun  6 09:58:08 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
 [Fri Jun  6 09:58:08 2025] [::1]:62939 [200]: GET /favicon.ico
 [Fri Jun  6 09:58:08 2025] [::1]:62939 Closing
+[Fri Jun  6 11:05:43 2025] [::1]:63618 Accepted
+[Fri Jun  6 11:05:43 2025] [::1]:63619 Accepted
+[Fri Jun  6 11:05:43 2025] [::1]:63618 Closed without sending a request; it was probably just an unused speculative preconnection
+[Fri Jun  6 11:05:43 2025] [::1]:63618 Closing
+[Fri Jun  6 11:05:43 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun  6 11:05:43 2025] [::1]:63619 [200]: POST /api/register
+[Fri Jun  6 11:05:43 2025] [::1]:63619 Closing
+[Fri Jun  6 11:51:57 2025] [::1]:64000 Accepted
+[Fri Jun  6 11:52:58 2025] [::1]:64000 Closed without sending a request; it was probably just an unused speculative preconnection
+[Fri Jun  6 11:52:58 2025] [::1]:64000 Closing
