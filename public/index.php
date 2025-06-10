@@ -19,6 +19,13 @@ require_once __DIR__ . "/../bootstrap.php";
 // Faciliter la mise à jour et la maintenance de tes dépendances.
 // En résumé, Composer simplifie la gestion des librairies externes et l’organisation de ton code PHP.
 
+
+// Mise en place du middleware CORS pour gérer les requêtes cross-origin car les API
+// sont souvent appelées depuis des domaines différents de celui où elles sont hébergées.
+$corsMiddleware = new CorsMiddleWare();
+$corsMiddleware->handle();
+
+
 $router = new Router();
 
 try {

@@ -1,50 +1,13 @@
-[Fri Jun  6 09:52:35 2025] PHP 8.4.4 Development Server (http://localhost:8000) started
-[Fri Jun  6 09:52:39 2025] [::1]:62764 Accepted
-[Fri Jun  6 09:52:39 2025] [::1]:62765 Accepted
-[Fri Jun  6 09:54:07 2025] [::1]:62764 [200]: GET /
-[Fri Jun  6 09:54:07 2025] [::1]:62764 Closing
-[Fri Jun  6 09:54:07 2025] [::1]:62765 Closed without sending a request; it was probably just an unused speculative preconnection
-[Fri Jun  6 09:54:07 2025] [::1]:62765 Closing
-[Fri Jun  6 09:54:07 2025] [::1]:62812 Accepted
-[Fri Jun  6 09:54:10 2025] [::1]:62812 [200]: GET /.well-known/appspecific/com.chrome.devtools.json
-[Fri Jun  6 09:54:10 2025] [::1]:62812 Closing
-[Fri Jun  6 09:54:10 2025] [::1]:62815 Accepted
-[Fri Jun  6 09:54:11 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Fri Jun  6 09:54:11 2025] [::1]:62815 [200]: GET /favicon.ico
-[Fri Jun  6 09:54:11 2025] [::1]:62815 Closing
-[Fri Jun  6 09:54:16 2025] [::1]:62820 Accepted
-[Fri Jun  6 09:54:16 2025] [::1]:62821 Accepted
-[Fri Jun  6 09:56:01 2025] [::1]:62820 [200]: GET /
-[Fri Jun  6 09:56:01 2025] [::1]:62820 Closing
-[Fri Jun  6 09:56:01 2025] [::1]:62821 Closed without sending a request; it was probably just an unused speculative preconnection
-[Fri Jun  6 09:56:01 2025] [::1]:62821 Closing
-[Fri Jun  6 09:56:01 2025] [::1]:62869 Accepted
-[Fri Jun  6 09:56:01 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Fri Jun  6 09:56:01 2025] [::1]:62869 [200]: GET /.well-known/appspecific/com.chrome.devtools.json
-[Fri Jun  6 09:56:01 2025] [::1]:62869 Closing
-[Fri Jun  6 09:56:02 2025] [::1]:62871 Accepted
-[Fri Jun  6 09:56:02 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Fri Jun  6 09:56:02 2025] [::1]:62871 [200]: GET /favicon.ico
-[Fri Jun  6 09:56:02 2025] [::1]:62871 Closing
-[Fri Jun  6 09:58:07 2025] [::1]:62932 Accepted
-[Fri Jun  6 09:58:07 2025] [::1]:62933 Accepted
-[Fri Jun  6 09:58:07 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Fri Jun  6 09:58:07 2025] [::1]:62933 [200]: GET /
-[Fri Jun  6 09:58:07 2025] [::1]:62933 Closing
-[Fri Jun  6 09:58:07 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Fri Jun  6 09:58:07 2025] [::1]:62932 [200]: GET /.well-known/appspecific/com.chrome.devtools.json
-[Fri Jun  6 09:58:07 2025] [::1]:62932 Closing
-[Fri Jun  6 09:58:07 2025] [::1]:62939 Accepted
-[Fri Jun  6 09:58:08 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Fri Jun  6 09:58:08 2025] [::1]:62939 [200]: GET /favicon.ico
-[Fri Jun  6 09:58:08 2025] [::1]:62939 Closing
-[Fri Jun  6 11:05:43 2025] [::1]:63618 Accepted
-[Fri Jun  6 11:05:43 2025] [::1]:63619 Accepted
-[Fri Jun  6 11:05:43 2025] [::1]:63618 Closed without sending a request; it was probably just an unused speculative preconnection
-[Fri Jun  6 11:05:43 2025] [::1]:63618 Closing
-[Fri Jun  6 11:05:43 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Fri Jun  6 11:05:43 2025] [::1]:63619 [200]: POST /api/register
-[Fri Jun  6 11:05:43 2025] [::1]:63619 Closing
-[Fri Jun  6 11:51:57 2025] [::1]:64000 Accepted
-[Fri Jun  6 11:52:58 2025] [::1]:64000 Closed without sending a request; it was probably just an unused speculative preconnection
-[Fri Jun  6 11:52:58 2025] [::1]:64000 Closing
+[Tue Jun 10 14:28:06 2025] PHP 8.4.4 Development Server (http://localhost:8000) started
+[Tue Jun 10 15:44:54 2025] [::1]:63716 Accepted
+[Tue Jun 10 15:44:54 2025] [::1]:63717 Accepted
+[Tue Jun 10 15:44:54 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Tue Jun 10 15:44:54 2025] [::1]:63717 [200]: GET /
+[Tue Jun 10 15:44:54 2025] [::1]:63717 Closing
+[Tue Jun 10 15:44:55 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Tue Jun 10 15:44:55 2025] [::1]:63716 [200]: GET /favicon.ico
+[Tue Jun 10 15:44:55 2025] [::1]:63716 Closing
+[Tue Jun 10 15:45:00 2025] [::1]:64735 Accepted
+[Tue Jun 10 15:45:01 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Tue Jun 10 15:45:01 2025] [::1]:64735 [200]: GET /.well-known/appspecific/com.chrome.devtools.json
+[Tue Jun 10 15:45:01 2025] [::1]:64735 Closing

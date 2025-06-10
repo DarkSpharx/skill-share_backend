@@ -9,6 +9,7 @@ CREATE TABLE `user` (
     avatar VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
+    `role` ENUM('user', 'admin') NOT NULL DEFAULT 'user',
     created_at DATETIME
     
 );
