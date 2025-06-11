@@ -1,6 +1,7 @@
 <?php
 // mise en place de l'autoload 
 
+use App\core\CorsMiddleWare;
 use App\core\Database;
 use App\core\Router;
 
