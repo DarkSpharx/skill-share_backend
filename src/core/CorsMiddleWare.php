@@ -28,7 +28,7 @@ class CorsMiddleWare
             "Content-Security-Policy: "
                 . "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
                 . "style-src-elem 'self' https://fonts.googleapis.com; "
-                . "font-src 'self' https://fonts.gstatic.com;"
+                . "font-src 'self' https://fonts.gstatic.com https://garet.typeforward.com;"
         );
 
         // Gérer les requêtes préflight (OPTIONS)

@@ -8,6 +8,7 @@ use App\core\attributes\Route;
 use App\model\User;
 use App\repository\UserRepository;
 use App\services\FileUploadService;
+use App\services\MailService;
 use DateTime;
 use Exception;
 
@@ -26,11 +27,6 @@ class UserController
             //     FileUploadService::deleteAvatar($user->getAvatar());
             // }
 
-            $userRepository = new UserRepository();
-            $saved = $userRepository->saveAvatar($filename);
-
-            if (!$saved) throw new Exception("Erreur lors de la sauvegarde de l'utilisateur");
-
             echo json_encode([
                 "success" => true,
                 "message" => "Image d'avatar uploadé avec succès",
@@ -45,27 +41,75 @@ class UserController
     public function register()
     {
 
-        $data = json_decode(file_get_contents("php://input"), true);
-        if (!$data) throw new Exception("Fichier .json invalide");
+        try {
+            $data = json_decode(file_get_contents("php://input"), true);
+            if (!$data) throw new Exception("Fichier .json invalide");
 
-        $userData = [
-            "username" => $data["username"] ?? "",
-            "avatar" => $data["avatar"] ?? "",
-            "email" => $data["email"] ?? "",
-            "password" => password_hash($data["password"], PASSWORD_BCRYPT) ?? "",
-        ];
+            $emailToken = bin2hex(random_bytes(32));
 
-        // création de l'objet User
-        $user = new User($userData);
-        $user->setCreatedAt((new DateTime())->format("Y-m-d H:i:s"));
-        $userRepository = new UserRepository();
-        $saved = $userRepository->save($user);
+            $userData = [
+                "username" => $data["username"] ?? "",
+                "avatar" => $data["avatar"] ?? "avatar-default.png",
+                "email" => $data["email"] ?? "",
+                "password" => password($data["password"], PASSWORD_BCRYPT) ?? "",
+                "email_token" => $emailToken
+            ];
 
-        if (!$saved) throw new Exception("Erreur lors de la sauvegarde de l'utilisateur");
+            // création de l'objet User
+            $user = new User($userData);
+            $user->setCreatedAt((new DateTime())->format("Y-m-d H:i:s"));
+            $userRepository = new UserRepository();
+            $saved = $userRepository->save($user);
 
-        echo json_encode([
-            "success" => true,
-            "message" => "Inscription réussie. Veuillez vérifier vos mails." . json_encode($data)
-        ]);
+            if (!$saved) throw new Exception("Erreur lors de la sauvegarde de l'utilisateur");
+
+            if (!$user->getEmail_token()) throw new Exception("Erreur lors de la génération du token d'email");
+
+            MailService::sendEmailVerification($user->getEmail(), $user->getEmail_token());
+
+            echo json_encode([
+                "success" => true,
+                "message" => "Inscription réussie. Veuillez vérifier vos mails." . json_encode($data)
+            ]);
+        } catch (\Exception $e) {
+            error_log("Erreur lors de l'inscription: " . $e->getMessage());
+            http_response_code(400);
+            echo json_encode([
+                "success" => false,
+                "message" => $e->getMessage()
+            ]);
+        }
+    }
+
+    #[Route("/api/verify-email", "GET")]
+    public function verifyEmail()
+    {
+        try {
+            $token = $_GET["token"] ?? null;
+
+            if (!$token) throw new Exception("Token manquant");
+
+            $userRepository = new UserRepository();
+            $user = $userRepository->findUserByToken($token);
+
+            if (!$user) throw new Exception("Utilisateur introuvable");
+
+            $user->setEmail_token(null);
+            $user->setIs_verified(true);
+
+            $updated = $userRepository->update($user);
+            if (!$updated) throw new Exception("Erreur lors de la mise à jour de l'utilisateur.");
+            echo json_encode([
+                "success" => true,
+                "error" => "Email vérifié avec succès. Vous pouvez maintenant vous connecter."
+            ]);
+        } catch (\Exception $e) {
+            error_log("Erreur inscription: " . $e->getMessage());
+            http_response_code(400);
+            echo json_encode([
+                "success" => false,
+                "error" => $e->getMessage()
+            ]);
+        }
     }
 }
