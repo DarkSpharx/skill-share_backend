@@ -35,17 +35,50 @@ class UserRepository
         ]);
     }
 
-    public function findUserByToken($token): User
+    public function findUserByEamil(string $email): ?User
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE email_token = ?");
-
-        $stmt->execute([$token]);
-
+        $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE email = ?");
+        $stmt->execute([$email]);
         $data = $stmt->fetch();
+        if (!$data) {
+            return null;
+        }
         $user = new User($data);
         $user->setIduser($data["id_user"]);
         $user->setVerified_at((new DateTime())->format("Y-m-d H:i:s"));
-        $user->setRole($data["role"]);
+        $user->setRole(json_decode($data["role"], true));
+
+        return $user;
+    }
+
+    public function findUserByUsername(string $userName): ?User
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE username = ?");
+        $stmt->execute([$userName]);
+        $data = $stmt->fetch();
+        if (!$data) {
+            return null;
+        }
+        $user = new User($data);
+        $user->setIduser($data["id_user"]);
+        $user->setVerified_at((new DateTime())->format("Y-m-d H:i:s"));
+        $user->setRole(json_decode($data["role"], true));
+
+        return $user;
+    }
+
+    public function findUserByToken($token): ?User
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE email_token = ?");
+        $stmt->execute([$token]);
+        $data = $stmt->fetch();
+        if (!$data) {
+            return null;
+        }
+        $user = new User($data);
+        $user->setIduser($data["id_user"]);
+        $user->setVerified_at((new DateTime())->format("Y-m-d H:i:s"));
+        $user->setRole(json_decode($data["role"], true));
 
         return $user;
     }
@@ -62,13 +95,13 @@ class UserRepository
             verified_at = ?,
             password = ?,
             avatar = ?
-            WHERE id = ?"
+            WHERE id_user = ?"
         );
 
         return $stmt->execute([
             $user->getUserName(),
             $user->getEmail(),
-            $user->getRole(),
+            json_encode($user->getRole()),
             (int)$user->getIs_verified(),
             $user->getEmail_token(),
             $user->getVerified_at(),

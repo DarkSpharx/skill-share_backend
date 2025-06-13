@@ -1,24 +1,82 @@
-[Thu Jun 12 15:28:34 2025] PHP 8.4.4 Development Server (http://localhost:8000) started
-[Thu Jun 12 15:29:11 2025] [::1]:60866 Accepted
-[Thu Jun 12 15:29:11 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Thu Jun 12 15:29:11 2025] [::1]:60866 [200]: POST /api/upload-avatar
-[Thu Jun 12 15:29:11 2025] [::1]:60866 Closing
-[Thu Jun 12 15:29:12 2025] [::1]:60869 Accepted
-[Thu Jun 12 15:29:12 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Thu Jun 12 15:29:12 2025] [::1]:60869 [200]: OPTIONS /api/register
-[Thu Jun 12 15:29:12 2025] [::1]:60869 Closing
-[Thu Jun 12 15:29:12 2025] [::1]:60872 Accepted
-[Thu Jun 12 15:29:12 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Thu Jun 12 15:29:12 2025] PHP Fatal error:  Uncaught Error: Call to undefined function App\controller\password() in D:\PROJETS\skill-share\backend\src\controller\UserController.php:54
-Stack trace:
-#0 D:\PROJETS\skill-share\backend\src\core\Router.php(26): App\controller\UserController->register()
-#1 D:\PROJETS\skill-share\backend\public\index.php(41): App\core\Router->dispatch('/api/register', 'POST')
-#2 {main}
-  thrown in D:\PROJETS\skill-share\backend\src\controller\UserController.php on line 54
-[Thu Jun 12 15:29:12 2025] [::1]:60872 [200]: POST /api/register - Uncaught Error: Call to undefined function App\controller\password() in D:\PROJETS\skill-share\backend\src\controller\UserController.php:54
-Stack trace:
-#0 D:\PROJETS\skill-share\backend\src\core\Router.php(26): App\controller\UserController->register()
-#1 D:\PROJETS\skill-share\backend\public\index.php(41): App\core\Router->dispatch('/api/register', 'POST')
-#2 {main}
-  thrown in D:\PROJETS\skill-share\backend\src\controller\UserController.php on line 54
-[Thu Jun 12 15:29:12 2025] [::1]:60872 Closing
+[Fri Jun 13 11:39:53 2025] PHP 8.4.4 Development Server (http://localhost:8000) started
+[Fri Jun 13 11:40:25 2025] [::1]:52931 Accepted
+[Fri Jun 13 11:40:25 2025] [::1]:52932 Accepted
+[Fri Jun 13 11:40:25 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:40:25 2025] [::1]:52931 [200]: OPTIONS /api/register
+[Fri Jun 13 11:40:25 2025] [::1]:52931 Closing
+[Fri Jun 13 11:40:25 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:40:25 2025] [::1]:52932 [200]: OPTIONS /api/register
+[Fri Jun 13 11:40:25 2025] [::1]:52932 Closing
+[Fri Jun 13 11:40:25 2025] [::1]:52935 Accepted
+[Fri Jun 13 11:40:25 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:40:25 2025] Erreur lors de l'inscription: Un utilisateur avec cet email existe déjà
+[Fri Jun 13 11:40:25 2025] [::1]:52935 [400]: POST /api/register
+[Fri Jun 13 11:40:25 2025] [::1]:52935 Closing
+[Fri Jun 13 11:40:25 2025] [::1]:52937 Accepted
+[Fri Jun 13 11:40:25 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:40:26 2025] Erreur lors de l'inscription: Un utilisateur avec cet email existe déjà
+[Fri Jun 13 11:40:26 2025] [::1]:52937 [400]: POST /api/register
+[Fri Jun 13 11:40:26 2025] [::1]:52937 Closing
+[Fri Jun 13 11:48:07 2025] [::1]:53146 Accepted
+[Fri Jun 13 11:48:07 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:48:07 2025] [::1]:53146 [200]: OPTIONS /api/register
+[Fri Jun 13 11:48:07 2025] [::1]:53146 Closing
+[Fri Jun 13 11:48:07 2025] [::1]:53147 Accepted
+[Fri Jun 13 11:48:08 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:48:08 2025] [::1]:53147 [200]: OPTIONS /api/register
+[Fri Jun 13 11:48:08 2025] [::1]:53147 Closing
+[Fri Jun 13 11:48:08 2025] [::1]:53150 Accepted
+[Fri Jun 13 11:48:08 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:48:08 2025] Erreur lors de l'inscription: Ce Nam d'utilisateur existe déjà
+[Fri Jun 13 11:48:08 2025] [::1]:53150 [400]: POST /api/register
+[Fri Jun 13 11:48:08 2025] [::1]:53150 Closing
+[Fri Jun 13 11:48:08 2025] [::1]:53152 Accepted
+[Fri Jun 13 11:48:08 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:48:08 2025] Erreur lors de l'inscription: Ce Nam d'utilisateur existe déjà
+[Fri Jun 13 11:48:08 2025] [::1]:53152 [400]: POST /api/register
+[Fri Jun 13 11:48:08 2025] [::1]:53152 Closing
+[Fri Jun 13 11:50:51 2025] [::1]:53376 Accepted
+[Fri Jun 13 11:50:51 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:50:51 2025] [::1]:53376 [200]: OPTIONS /api/register
+[Fri Jun 13 11:50:51 2025] [::1]:53376 Closing
+[Fri Jun 13 11:50:51 2025] [::1]:53378 Accepted
+[Fri Jun 13 11:50:51 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:50:51 2025] Erreur lors de l'inscription: Cet email est déjà utilisé
+[Fri Jun 13 11:50:51 2025] [::1]:53378 [400]: POST /api/register
+[Fri Jun 13 11:50:51 2025] [::1]:53378 Closing
+[Fri Jun 13 11:52:22 2025] [::1]:53470 Accepted
+[Fri Jun 13 11:52:22 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:52:22 2025] [::1]:53470 [200]: OPTIONS /api/register
+[Fri Jun 13 11:52:22 2025] [::1]:53470 Closing
+[Fri Jun 13 11:52:23 2025] [::1]:53472 Accepted
+[Fri Jun 13 11:52:23 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:52:23 2025] Erreur lors de l'inscription: Cet email est déjà utilisé
+[Fri Jun 13 11:52:23 2025] [::1]:53472 [400]: POST /api/register
+[Fri Jun 13 11:52:23 2025] [::1]:53472 Closing
+[Fri Jun 13 11:57:37 2025] [::1]:53666 Accepted
+[Fri Jun 13 11:57:37 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:57:37 2025] [::1]:53666 [200]: OPTIONS /api/register
+[Fri Jun 13 11:57:37 2025] [::1]:53666 Closing
+[Fri Jun 13 11:57:37 2025] [::1]:53668 Accepted
+[Fri Jun 13 11:57:37 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:57:37 2025] Erreur lors de l'inscription: Cet email est déjà utilisé
+[Fri Jun 13 11:57:37 2025] [::1]:53668 [400]: POST /api/register
+[Fri Jun 13 11:57:37 2025] [::1]:53668 Closing
+[Fri Jun 13 11:57:54 2025] [::1]:53714 Accepted
+[Fri Jun 13 11:57:54 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:57:54 2025] [::1]:53714 [200]: OPTIONS /api/register
+[Fri Jun 13 11:57:54 2025] [::1]:53714 Closing
+[Fri Jun 13 11:57:54 2025] [::1]:53716 Accepted
+[Fri Jun 13 11:57:54 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 11:57:54 2025] Erreur lors de l'inscription: Cet email est déjà utilisé
+[Fri Jun 13 11:57:54 2025] [::1]:53716 [400]: POST /api/register
+[Fri Jun 13 11:57:54 2025] [::1]:53716 Closing
+[Fri Jun 13 12:03:38 2025] [::1]:53991 Accepted
+[Fri Jun 13 12:03:39 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 12:03:39 2025] [::1]:53991 [200]: OPTIONS /api/register
+[Fri Jun 13 12:03:39 2025] [::1]:53991 Closing
+[Fri Jun 13 12:03:39 2025] [::1]:53993 Accepted
+[Fri Jun 13 12:03:39 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Fri Jun 13 12:03:39 2025] Erreur lors de l'inscription: Un compte a déjà été crée avec cet username et cette adresse email.
+[Fri Jun 13 12:03:39 2025] [::1]:53993 [400]: POST /api/register
+[Fri Jun 13 12:03:39 2025] [::1]:53993 Closing

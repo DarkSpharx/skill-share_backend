@@ -45,20 +45,29 @@ class UserController
             $data = json_decode(file_get_contents("php://input"), true);
             if (!$data) throw new Exception("Fichier .json invalide");
 
+            $userRepository = new UserRepository();
+
+            if ($userRepository->findUserByUsername($data['username']) && $userRepository->findUserByEamil($data['email'])) {
+                throw new Exception("Un compte a déjà été crée avec ce Nom d'utilisateur et cette adresse email.");
+            } elseif ($userRepository->findUserByEamil($data['email'])) {
+                throw new Exception('Cette adresse email est déjà utilisée !');
+            } elseif ($userRepository->findUserByUsername($data['username'])) {
+                throw new Exception("Ce Nom d'utilisateur est déjà utilisée !");
+            };
+
             $emailToken = bin2hex(random_bytes(32));
 
             $userData = [
                 "username" => $data["username"] ?? "",
                 "avatar" => $data["avatar"] ?? "avatar-default.png",
                 "email" => $data["email"] ?? "",
-                "password" => password($data["password"], PASSWORD_BCRYPT) ?? "",
+                "password" => password_hash($data["password"], PASSWORD_BCRYPT) ?? "",
                 "email_token" => $emailToken
             ];
 
             // création de l'objet User
             $user = new User($userData);
             $user->setCreatedAt((new DateTime())->format("Y-m-d H:i:s"));
-            $userRepository = new UserRepository();
             $saved = $userRepository->save($user);
 
             if (!$saved) throw new Exception("Erreur lors de la sauvegarde de l'utilisateur");
@@ -76,7 +85,7 @@ class UserController
             http_response_code(400);
             echo json_encode([
                 "success" => false,
-                "message" => $e->getMessage()
+                "error" => $e->getMessage()
             ]);
         }
     }
