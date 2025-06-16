@@ -27,7 +27,7 @@ class User
         $this->email = $data["email"];
         $this->password = $data["password"];
         $this->email_token = $data["email_token"];
-        $this->is_verified = isset($data["is_verified "]) ? (bool)$data["is_verified"] : false;
+        $this->is_verified = isset($data["is_verified"]) ? (bool)$data["is_verified"] : false;
     }
 
     /**

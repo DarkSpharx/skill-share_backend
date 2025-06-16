@@ -35,7 +35,7 @@ class UserRepository
         ]);
     }
 
-    public function findUserByEamil(string $email): ?User
+    public function findUserByEmail(string $email): ?User
     {
         $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE email = ?");
         $stmt->execute([$email]);
