@@ -148,6 +148,7 @@ class UserController
                 "user" => [
                     "avatar" => $user->getAvatar(),
                     "username" => $user->getUsername(),
+                    "role" => $user->getRole()
                 ]
             ]);
         } catch (\Exception $e) {

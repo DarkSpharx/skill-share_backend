@@ -19,9 +19,8 @@ class JWTService
         }
     }
 
-    public static function generate(): string
+    public static function generate(array $payload = []): string
     {
-
         self::initKey();
 
         // header
@@ -30,23 +29,23 @@ class JWTService
             "alg" => "HS256",
         ];
 
-        $payload["exp"] = time() + (24 * 60 * 60); // 24 heures avant expiration du token
+        // Ajoute l'expiration au payload
+        $payload["exp"] = time() + (24 * 60 * 60); // 24 heures
 
         // Encoder le header et le payload en base64
         $base64Header = self::base64url_encode(json_encode($header));
         $base64Payload = self::base64url_encode(json_encode($payload));
 
-        // creéation de la signature
+        // Création de la signature
         $signature = hash_hmac(
             "sha256",
             $base64Header . "." . $base64Payload,
             self::$key,
             true
         );
-        $base64Signature = self::base64url_encode(json_encode($payload));
+        $base64Signature = self::base64url_encode($signature);
 
-
-        return $base64Header . "-" . $base64Payload . "-" . $base64Signature;
+        return $base64Header . "." . $base64Payload . "." . $base64Signature;
     }
 
     private static function base64url_encode(string $data): string

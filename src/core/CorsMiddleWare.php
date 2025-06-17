@@ -23,12 +23,12 @@ class CorsMiddleWare
         // Définition des headers HTTP autorisées pour les requêtes CORS
         header(("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With"));
 
-        // CSP adaptée pour Google Fonts
+        // CSP adaptée pour Google Fonts et Font Awesome
         header(
             "Content-Security-Policy: "
-                . "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
-                . "style-src-elem 'self' https://fonts.googleapis.com; "
-                . "font-src 'self' https://fonts.gstatic.com https://garet.typeforward.com;"
+                . "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; "
+                . "style-src-elem 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; "
+                . "font-src 'self' https://fonts.gstatic.com https://garet.typeforward.com https://cdnjs.cloudflare.com;"
         );
 
         // Gérer les requêtes préflight (OPTIONS)
