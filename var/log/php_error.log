@@ -1,33 +1,18 @@
-[Tue Jun 17 16:03:33 2025] PHP 8.4.4 Development Server (http://localhost:8000) started
-[Tue Jun 17 16:04:00 2025] [::1]:49292 Accepted
-[Tue Jun 17 16:04:00 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Tue Jun 17 16:04:00 2025] [::1]:49292 [200]: OPTIONS /api/login
-[Tue Jun 17 16:04:00 2025] [::1]:49292 Closing
-[Tue Jun 17 16:04:00 2025] [::1]:49294 Accepted
-[Tue Jun 17 16:04:00 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Tue Jun 17 16:04:01 2025] [::1]:49294 [200]: POST /api/login
-[Tue Jun 17 16:04:01 2025] [::1]:49294 Closing
-[Tue Jun 17 16:07:57 2025] [::1]:49531 Accepted
-[Tue Jun 17 16:07:57 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Tue Jun 17 16:07:57 2025] [::1]:49531 [200]: OPTIONS /api/login
-[Tue Jun 17 16:07:57 2025] [::1]:49531 Closing
-[Tue Jun 17 16:07:57 2025] [::1]:49534 Accepted
-[Tue Jun 17 16:07:57 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Tue Jun 17 16:07:58 2025] [::1]:49534 [200]: POST /api/login
-[Tue Jun 17 16:07:58 2025] [::1]:49534 Closing
-[Tue Jun 17 16:09:07 2025] [::1]:49647 Accepted
-[Tue Jun 17 16:09:07 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Tue Jun 17 16:09:07 2025] [::1]:49647 [200]: OPTIONS /api/login
-[Tue Jun 17 16:09:07 2025] [::1]:49647 Closing
-[Tue Jun 17 16:09:07 2025] [::1]:49649 Accepted
-[Tue Jun 17 16:09:07 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Tue Jun 17 16:09:08 2025] [::1]:49649 [200]: POST /api/login
-[Tue Jun 17 16:09:08 2025] [::1]:49649 Closing
-[Tue Jun 17 16:09:40 2025] [::1]:49929 Accepted
-[Tue Jun 17 16:09:40 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Tue Jun 17 16:09:40 2025] [::1]:49929 [200]: OPTIONS /api/login
-[Tue Jun 17 16:09:40 2025] [::1]:49929 Closing
-[Tue Jun 17 16:09:40 2025] [::1]:49931 Accepted
-[Tue Jun 17 16:09:40 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Tue Jun 17 16:09:40 2025] [::1]:49931 [200]: POST /api/login
-[Tue Jun 17 16:09:40 2025] [::1]:49931 Closing
+[Wed Jun 18 15:50:52 2025] PHP 8.4.4 Development Server (http://localhost:8000) started
+[Wed Jun 18 15:57:55 2025] [::1]:51187 Accepted
+[Wed Jun 18 15:57:55 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Wed Jun 18 15:57:55 2025] [::1]:51187 [200]: OPTIONS /api/login
+[Wed Jun 18 15:57:55 2025] [::1]:51187 Closing
+[Wed Jun 18 15:57:55 2025] [::1]:51189 Accepted
+[Wed Jun 18 15:57:55 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Wed Jun 18 15:57:55 2025] [::1]:51189 [200]: POST /api/login
+[Wed Jun 18 15:57:55 2025] [::1]:51189 Closing
+[Wed Jun 18 16:13:46 2025] [::1]:52608 Accepted
+[Wed Jun 18 16:13:46 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Wed Jun 18 16:13:46 2025] [::1]:52608 [200]: OPTIONS /api/user/update
+[Wed Jun 18 16:13:46 2025] [::1]:52608 Closing
+[Wed Jun 18 16:13:46 2025] [::1]:52610 Accepted
+[Wed Jun 18 16:13:46 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Wed Jun 18 16:13:46 2025] Erreur lors de la mise a jour du profile: Fichier .json invalide
+[Wed Jun 18 16:13:46 2025] [::1]:52610 [400]: POST /api/user/update
+[Wed Jun 18 16:13:46 2025] [::1]:52610 Closing

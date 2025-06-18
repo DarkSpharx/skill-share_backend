@@ -83,6 +83,24 @@ class UserRepository
         return $user;
     }
 
+    public function findUserById(string $idUser): ?User
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE id_user = ?");
+        $stmt->execute([$idUser]);
+        $data = $stmt->fetch();
+        if (!$data) {
+            return null;
+        }
+        $user = new User($data);
+        $user->setIduser($data["id_user"]);
+        $user->setVerified_at((new DateTime())->format("Y-m-d H:i:s"));
+        $user->setRole(json_decode($data["role"], true));
+
+        return $user;
+    }
+
+
+
     public function update(User $user): bool
     {
         $stmt = $this->pdo->prepare(

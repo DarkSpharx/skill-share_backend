@@ -52,4 +52,41 @@ class JWTService
     {
         return rtrim(strtr(base64_encode($data), "+/", "-_"), "=");
     }
+
+    private static function base64url_decode(string $data)
+    {
+        return base64_decode(strtr($data, "-_", "+/"));
+    }
+
+    public static function verify(string $token)
+    {
+        self::initKey();
+
+        // séparer les trois parties du token (paylod / header / signature)
+        $parts = explode(".", $token);
+        if (count($parts) !== 3) {
+            return false;
+        }
+
+        [$base64Header, $base64Payload, $base64Signature] = $parts;
+
+        // on refait la signature car elle est encodée
+        $signature = hash_hmac(
+            "sha256",
+            $base64Header . "." . $base64Payload,
+            self::$key,
+            true
+        );
+
+        // verification de la signature
+        if (!hash_equals(self::base64url_decode($base64Signature), $signature)) return false;
+
+        // docadage du payload
+        $payload = json_decode(self::base64url_decode($base64Payload), true);
+
+        // verification du payload décodé
+        if (isset($payload["exp"]) && $payload["exp"] > time()) return false;
+
+        return $payload;
+    }
 }

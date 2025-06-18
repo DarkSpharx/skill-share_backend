@@ -29,15 +29,15 @@ class User
         $this->email_token = $data["email_token"];
         $this->is_verified = isset($data["is_verified"]) ? (bool)$data["is_verified"] : false;
 
-        if (isset($data["role"])) {
-            if (is_array($data["role"])) {
-                $this->role = $data["role"];
-            } else {
-                // Si c'est une string JSON, on la décode
-                $decoded = json_decode($data["role"], true);
-                $this->role = is_array($decoded) ? $decoded : [$data["role"]];
-            }
-        }
+        // if (isset($data["role"])) {
+        //     if (is_array($data["role"])) {
+        //         $this->role = $data["role"];
+        //     } else {
+        //         // Si c'est une string JSON, on la décode
+        //         $decoded = json_decode($data["role"], true);
+        //         $this->role = is_array($decoded) ? $decoded : [$data["role"]];
+        //     }
+        // }
     }
 
     /**

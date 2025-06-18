@@ -160,4 +160,49 @@ class UserController
             ]);
         }
     }
+
+    #[Route("/api/user/update", "POST")]
+    public function updateProfil()
+    {
+        try {
+            $data = json_decode(file_get_contents("php://input"), true);
+            if (!$data) throw new Exception("Fichier .json invalide");
+
+            $userRepository = new UserRepository();
+
+            // récupération du token
+            $token = str_replace("Bearer ", "", $_SERVER["HTTP_AUTHORIZATION"]) ?? "";
+            // si pas de token
+            if (!$token) throw new Exception("non authorisé");
+
+            // Appel du service JWT pour faire la verification du token
+            $verifToken = JWTService::verify($token);
+            if (!$verifToken) throw new Exception("Token invalide");
+
+            $user = $userRepository->findUserById($verifToken["id_user"]);
+            if (!$user) throw new Exception("utilisateur non trouvé");
+
+            // mise a jour des infos utilisateurs (ici le pseudo)
+            if (isset($data["username"])) $user->setUsername($data["username"]);
+
+            // Exemple si autre champs a modifier (ici first name) 
+            // if(isset($data["firstname"])) $user->setFirstname($data["firstname"]);
+
+            $updated = $userRepository->update($user);
+
+            if (!$updated) throw new Exception("Probleme de mise a jour de la BDD");
+
+            echo json_encode([
+                "success" => false,
+                "error" => "Profil mis a jours avec succés !"
+            ]);
+        } catch (\Exception $e) {
+            error_log("Erreur lors de la mise a jour du profile: " . $e->getMessage());
+            http_response_code(400);
+            echo json_encode([
+                "success" => false,
+                "error" => $e->getMessage()
+            ]);
+        }
+    }
 }
