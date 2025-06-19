@@ -83,7 +83,7 @@ class UserRepository
         return $user;
     }
 
-    public function findUserById(string $idUser): ?User
+    public function findUserById(int|string $idUser): ?User
     {
         $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE id_user = ?");
         $stmt->execute([$idUser]);

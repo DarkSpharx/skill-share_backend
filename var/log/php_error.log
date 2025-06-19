@@ -1,18 +1,108 @@
-[Wed Jun 18 15:50:52 2025] PHP 8.4.4 Development Server (http://localhost:8000) started
-[Wed Jun 18 15:57:55 2025] [::1]:51187 Accepted
-[Wed Jun 18 15:57:55 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Wed Jun 18 15:57:55 2025] [::1]:51187 [200]: OPTIONS /api/login
-[Wed Jun 18 15:57:55 2025] [::1]:51187 Closing
-[Wed Jun 18 15:57:55 2025] [::1]:51189 Accepted
-[Wed Jun 18 15:57:55 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Wed Jun 18 15:57:55 2025] [::1]:51189 [200]: POST /api/login
-[Wed Jun 18 15:57:55 2025] [::1]:51189 Closing
-[Wed Jun 18 16:13:46 2025] [::1]:52608 Accepted
-[Wed Jun 18 16:13:46 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Wed Jun 18 16:13:46 2025] [::1]:52608 [200]: OPTIONS /api/user/update
-[Wed Jun 18 16:13:46 2025] [::1]:52608 Closing
-[Wed Jun 18 16:13:46 2025] [::1]:52610 Accepted
-[Wed Jun 18 16:13:46 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
-[Wed Jun 18 16:13:46 2025] Erreur lors de la mise a jour du profile: Fichier .json invalide
-[Wed Jun 18 16:13:46 2025] [::1]:52610 [400]: POST /api/user/update
-[Wed Jun 18 16:13:46 2025] [::1]:52610 Closing
+[Thu Jun 19 15:56:52 2025] PHP 8.4.4 Development Server (http://localhost:8000) started
+[Thu Jun 19 15:57:02 2025] [::1]:53391 Accepted
+[Thu Jun 19 15:57:02 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 15:57:02 2025] [::1]:53391 [200]: OPTIONS /api/login
+[Thu Jun 19 15:57:02 2025] [::1]:53391 Closing
+[Thu Jun 19 15:57:02 2025] [::1]:53393 Accepted
+[Thu Jun 19 15:57:03 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 15:57:03 2025] [::1]:53393 [200]: POST /api/login
+[Thu Jun 19 15:57:03 2025] [::1]:53393 Closing
+[Thu Jun 19 15:57:16 2025] [::1]:53472 Accepted
+[Thu Jun 19 15:57:16 2025] [::1]:53472 [200]: GET /uploads/avatar/avatar_68500ec0c14eb0.82387095.png
+[Thu Jun 19 15:57:16 2025] [::1]:53472 Closing
+[Thu Jun 19 15:57:32 2025] [::1]:53883 Accepted
+[Thu Jun 19 15:57:32 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 15:57:32 2025] [::1]:53883 [200]: OPTIONS /api/user/update
+[Thu Jun 19 15:57:32 2025] [::1]:53883 Closing
+[Thu Jun 19 15:57:32 2025] [::1]:53885 Accepted
+[Thu Jun 19 15:57:32 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 15:57:32 2025] Données de validation: {"username":"fred","email":"fred_la_bete@hotmail.com","avatar":[]}
+[Thu Jun 19 15:57:32 2025] Utilisateur actuel: fred / fred_la_bete@hotmail.com
+[Thu Jun 19 15:57:32 2025] Vérification du nom d'utilisateur: fred
+[Thu Jun 19 15:57:32 2025] Nom d'utilisateur identique à celui de l'utilisateur actuel, vérification ignorée
+[Thu Jun 19 15:57:32 2025] Vérification des e-mails: fred_la_bete@hotmail.com
+[Thu Jun 19 15:57:32 2025] E-mail identique à celui de l'utilisateur actuel, vérification ignorée
+[Thu Jun 19 15:57:32 2025] [::1]:53885 [200]: POST /api/user/update
+[Thu Jun 19 15:57:32 2025] [::1]:53885 Closing
+[Thu Jun 19 15:57:51 2025] [::1]:53917 Accepted
+[Thu Jun 19 15:57:51 2025] [::1]:53917 [404]: GET /uploads/avatar/[object%20Object] - No such file or directory
+[Thu Jun 19 15:57:51 2025] [::1]:53917 Closing
+[Thu Jun 19 15:58:34 2025] [::1]:53920 Accepted
+[Thu Jun 19 15:58:34 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 15:58:35 2025] [::1]:53920 [200]: OPTIONS /api/user/update
+[Thu Jun 19 15:58:35 2025] [::1]:53920 Closing
+[Thu Jun 19 15:58:35 2025] [::1]:53922 Accepted
+[Thu Jun 19 15:58:35 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 15:58:35 2025] Données de validation: {"username":"fred","email":"fred_la_bete@hotmail.com","avatar":[]}
+[Thu Jun 19 15:58:35 2025] Utilisateur actuel: fred / fred_la_bete@hotmail.com
+[Thu Jun 19 15:58:35 2025] Vérification du nom d'utilisateur: fred
+[Thu Jun 19 15:58:35 2025] Nom d'utilisateur identique à celui de l'utilisateur actuel, vérification ignorée
+[Thu Jun 19 15:58:35 2025] Vérification des e-mails: fred_la_bete@hotmail.com
+[Thu Jun 19 15:58:35 2025] E-mail identique à celui de l'utilisateur actuel, vérification ignorée
+[Thu Jun 19 15:58:35 2025] [::1]:53922 [200]: POST /api/user/update
+[Thu Jun 19 15:58:35 2025] [::1]:53922 Closing
+[Thu Jun 19 15:58:37 2025] [::1]:53944 Accepted
+[Thu Jun 19 15:58:37 2025] [::1]:53944 [404]: GET /uploads/avatar/[object%20Object] - No such file or directory
+[Thu Jun 19 15:58:37 2025] [::1]:53944 Closing
+[Thu Jun 19 15:59:39 2025] [::1]:54175 Accepted
+[Thu Jun 19 15:59:39 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 15:59:39 2025] [::1]:54175 [200]: OPTIONS /api/user/update
+[Thu Jun 19 15:59:39 2025] [::1]:54175 Closing
+[Thu Jun 19 15:59:39 2025] [::1]:54177 Accepted
+[Thu Jun 19 15:59:39 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 15:59:39 2025] Données de validation: {"username":"fred","email":"fred_la_bete@hotmail.com","avatar":[]}
+[Thu Jun 19 15:59:39 2025] Utilisateur actuel: fred / fred_la_bete@hotmail.com
+[Thu Jun 19 15:59:39 2025] Vérification du nom d'utilisateur: fred
+[Thu Jun 19 15:59:39 2025] Nom d'utilisateur identique à celui de l'utilisateur actuel, vérification ignorée
+[Thu Jun 19 15:59:39 2025] Vérification des e-mails: fred_la_bete@hotmail.com
+[Thu Jun 19 15:59:39 2025] E-mail identique à celui de l'utilisateur actuel, vérification ignorée
+[Thu Jun 19 15:59:39 2025] [::1]:54177 [200]: POST /api/user/update
+[Thu Jun 19 15:59:39 2025] [::1]:54177 Closing
+[Thu Jun 19 16:03:49 2025] [::1]:54220 Accepted
+[Thu Jun 19 16:03:50 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 16:03:50 2025] [::1]:54220 [200]: OPTIONS /api/user/update
+[Thu Jun 19 16:03:50 2025] [::1]:54220 Closing
+[Thu Jun 19 16:03:50 2025] [::1]:54222 Accepted
+[Thu Jun 19 16:03:50 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 16:03:50 2025] Données de validation: {"username":"fred","email":"fred_la_bete@hotmail.com","avatar":[]}
+[Thu Jun 19 16:03:50 2025] Utilisateur actuel: fred / fred_la_bete@hotmail.com
+[Thu Jun 19 16:03:50 2025] Vérification du nom d'utilisateur: fred
+[Thu Jun 19 16:03:50 2025] Nom d'utilisateur identique à celui de l'utilisateur actuel, vérification ignorée
+[Thu Jun 19 16:03:50 2025] Vérification des e-mails: fred_la_bete@hotmail.com
+[Thu Jun 19 16:03:50 2025] E-mail identique à celui de l'utilisateur actuel, vérification ignorée
+[Thu Jun 19 16:03:50 2025] [::1]:54222 [200]: POST /api/user/update
+[Thu Jun 19 16:03:50 2025] [::1]:54222 Closing
+[Thu Jun 19 16:05:56 2025] [::1]:54314 Accepted
+[Thu Jun 19 16:05:56 2025] [::1]:54314 [404]: GET /uploads/avatar/[object%20Object] - No such file or directory
+[Thu Jun 19 16:05:56 2025] [::1]:54314 Closing
+[Thu Jun 19 16:06:23 2025] [::1]:54371 Accepted
+[Thu Jun 19 16:06:23 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 16:06:23 2025] [::1]:54371 [200]: OPTIONS /api/login
+[Thu Jun 19 16:06:23 2025] [::1]:54371 Closing
+[Thu Jun 19 16:06:23 2025] [::1]:54373 Accepted
+[Thu Jun 19 16:06:23 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 16:06:24 2025] [::1]:54373 [200]: POST /api/login
+[Thu Jun 19 16:06:24 2025] [::1]:54373 Closing
+[Thu Jun 19 16:06:26 2025] [::1]:54402 Accepted
+[Thu Jun 19 16:06:26 2025] [::1]:54402 [200]: GET /uploads/avatar/avatar_68500ec0c14eb0.82387095.png
+[Thu Jun 19 16:06:26 2025] [::1]:54402 Closing
+[Thu Jun 19 16:06:56 2025] [::1]:54443 Accepted
+[Thu Jun 19 16:06:56 2025] [::1]:54443 [200]: GET /uploads/avatar/avatar_68500ec0c14eb0.82387095.png
+[Thu Jun 19 16:06:56 2025] [::1]:54443 Closing
+[Thu Jun 19 16:11:21 2025] [::1]:54608 Accepted
+[Thu Jun 19 16:11:21 2025] [::1]:54608 [200]: GET /uploads/avatar/avatar_68500ec0c14eb0.82387095.png
+[Thu Jun 19 16:11:21 2025] [::1]:54608 Closing
+[Thu Jun 19 16:11:27 2025] [::1]:54611 Accepted
+[Thu Jun 19 16:11:27 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 16:11:27 2025] [::1]:54611 [200]: OPTIONS /api/user/update-avatar
+[Thu Jun 19 16:11:27 2025] [::1]:54611 Closing
+[Thu Jun 19 16:11:27 2025] [::1]:54613 Accepted
+[Thu Jun 19 16:11:28 2025] Xdebug: [Step Debug] Time-out connecting to debugging client, waited: 200 ms. Tried: 127.0.0.1:9003 (through xdebug.client_host/xdebug.client_port).
+[Thu Jun 19 16:11:28 2025] [::1]:54613 [200]: POST /api/user/update-avatar
+[Thu Jun 19 16:11:28 2025] [::1]:54613 Closing
+[Thu Jun 19 16:11:28 2025] [::1]:54616 Accepted
+[Thu Jun 19 16:11:28 2025] [::1]:54616 [404]: GET /uploads/avatar/avatar_68541a90340cb6.44475243.png - No such file or directory
+[Thu Jun 19 16:11:28 2025] [::1]:54616 Closing
+[Thu Jun 19 16:11:33 2025] [::1]:54637 Accepted
+[Thu Jun 19 16:11:33 2025] [::1]:54637 [404]: GET /uploads/avatar/avatar_68541a90340cb6.44475243.png - No such file or directory
+[Thu Jun 19 16:11:33 2025] [::1]:54637 Closing

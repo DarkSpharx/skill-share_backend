@@ -85,7 +85,7 @@ class JWTService
         $payload = json_decode(self::base64url_decode($base64Payload), true);
 
         // verification du payload décodé
-        if (isset($payload["exp"]) && $payload["exp"] > time()) return false;
+        if (isset($payload["exp"]) && $payload["exp"] < time()) return false;
 
         return $payload;
     }
