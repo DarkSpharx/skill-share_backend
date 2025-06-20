@@ -132,7 +132,7 @@ class UserController
             $user = $this->userRepository->findUserByEmail($data["email"]);
             if (!$user) throw new Exception(("Email ou mot de passe incorrect"));
             if (!password_verify($data["password"], $user->getPassword())) throw new Exception(("Email ou mot de passe incorrect"));
-            if (!$user->getIs_verified()) throw new Exception("Veuillez vérifier confirmer votre email avant de vous connecter.");
+            if (!$user->getIs_verified()) throw new Exception("Veuillez confirmer votre email avant de vous connecter.");
 
             // Générer un token de session ou JWT ici si nécessaire
             $token = JWTService::generate([
@@ -281,8 +281,7 @@ class UserController
 
             // Gérer l'upload de l'avatar
             try {
-                ///////////////////////////// PROBLEME chemin !!!!!!!!!!!!! ///////////////////////////////////
-                $upload_dir = __DIR__ . "/../../public/uploads/avatar";
+                $upload_dir = __DIR__ . "/../../public/uploads/avatar/";
                 $avatarFilename = FileUploadService::handleAvatarUpload($_FILES["avatar"], $upload_dir);
 
                 // Supprimer l'ancien avatar si il existe
@@ -305,6 +304,106 @@ class UserController
             } catch (\Exception $e) {
                 throw new \Exception('Erreur lors de l\'upload: ' . $e->getMessage());
             }
+        } catch (\Exception $e) {
+            http_response_code(400);
+            echo json_encode([
+                'success' => false,
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
+
+    #[Route('/api/user/request-reset', 'POST')]
+    /**
+     * Envoie un email avec un lien de réinitialisation
+     * Route : POST /api/user/request-reset
+     */
+    public function requestPasswordReset(): void
+    {
+        try {
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            if (empty($data['email'])) {
+                throw new \Exception('Email requis');
+            }
+
+            $user = $this->userRepository->findUserByEmail($data['email']);
+
+            if (!$user) {
+                throw new \Exception('Email non trouvé');
+            }
+
+            // Générer un token de réinitialisation
+            $resetToken = bin2hex(random_bytes(32));
+            $user->setReset_token($resetToken);
+            $user->setReset_at((new DateTime())->format("Y-m-d H:i:s"));
+
+
+            if (!$this->userRepository->update($user)) {
+                throw new \Exception('Erreur lors de la génération du token');
+            }
+
+            // Envoyer l'email
+            MailService::sendPasswordResetEmail($user->getEmail(), $resetToken);
+
+            echo json_encode([
+                'success' => true,
+                'message' => 'Email de réinitialisation envoyé'
+            ]);
+        } catch (\Exception $e) {
+            http_response_code(400);
+            echo json_encode([
+                'success' => false,
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
+
+    #[Route('/api/user/reset-password', 'POST')]
+    /**
+     * Réinitialise le mot de passe avec un token
+     * Route : POST /api/user/reset-password
+     */
+    public function resetPassword(): void
+    {
+        try {
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            if (empty($data['token']) || empty($data['password'])) {
+                throw new \Exception('Token et mot de passe requis');
+            }
+
+            $user = $this->userRepository->findByResetToken($data['token']);
+
+            if (!$user) {
+                throw new \Exception('Token invalide ou expiré');
+            }
+
+            // Vérifier si le token n'est pas expiré (24h)
+            $resetAt = $user->getReset_at();
+            if (!$resetAt) {
+                throw new \Exception('Date de réinitialisation invalide');
+            }
+
+            $resetAtDateTime = new \DateTime($resetAt);
+            $now = new \DateTime();
+            if ($resetAtDateTime->diff($now)->h >= 24) {
+                throw new \Exception('Token expiré');
+            }
+
+            // Mettre à jour le mot de passe
+            $user->setPassword(password_hash($data['password'], PASSWORD_BCRYPT));
+            $user->setReset_token(null);
+            $user->setReset_at(null);
+
+            if (!$this->userRepository->update($user)) {
+                throw new \Exception('Erreur lors de la mise à jour du mot de passe');
+            }
+
+            echo json_encode([
+                'success' => true,
+                'message' => 'Mot de passe mis à jour avec succès'
+            ]);
         } catch (\Exception $e) {
             http_response_code(400);
             echo json_encode([

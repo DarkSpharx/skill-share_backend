@@ -99,8 +99,6 @@ class UserRepository
         return $user;
     }
 
-
-
     public function update(User $user): bool
     {
         $stmt = $this->pdo->prepare(
@@ -127,5 +125,28 @@ class UserRepository
             $user->getAvatar(),
             $user->getIduser()
         ]);
+    }
+
+    /**
+     * Trouve un utilisateur par son token de réinitialisation
+     * @param string $token
+     * @return User|null
+     */
+    public function findByResetToken(string $token): ?User
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM user WHERE reset_token = ?");
+        $stmt->execute([$token]);
+        $data = $stmt->fetch();
+        if (!$data) return null;
+
+        $data['is_verified'] = (bool)$data['is_verified']; // Convertir en booléen
+        $user = new User($data);
+        $user->setIduser((int)$data['id']);
+        $user->setRole($data['role']);
+        $user->setEmail_token($data['email_token']);
+        $user->setPassword($data['password']);
+        $user->setReset_token($data['reset_token']);
+        $user->setReset_at($data['reset_at'] ? new \DateTime($data['reset_at']) : null);
+        return $user;
     }
 }

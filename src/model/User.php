@@ -19,6 +19,8 @@ class User
     private ?string $email_token;
     private bool $is_verified;
     private string $verified_at;
+    private ?string $reset_at = null;
+    private ?string $reset_token = null;
 
     public function __construct(array $data)
     {
@@ -236,6 +238,46 @@ class User
     public function setVerified_at($verified_at)
     {
         $this->verified_at = $verified_at;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of reset_at
+     */
+    public function getReset_at()
+    {
+        return $this->reset_at;
+    }
+
+    /**
+     * Set the value of reset_at
+     *
+     * @return  self
+     */
+    public function setReset_at($reset_at)
+    {
+        $this->reset_at = $reset_at;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of reset_token
+     */
+    public function getReset_token()
+    {
+        return $this->reset_token;
+    }
+
+    /**
+     * Set the value of reset_token
+     *
+     * @return  self
+     */
+    public function setReset_token($reset_token)
+    {
+        $this->reset_token = $reset_token;
 
         return $this;
     }
